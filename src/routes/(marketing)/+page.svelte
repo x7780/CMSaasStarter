@@ -1,14 +1,29 @@
-<script>
+<script lang="ts">
+  import {
+    WebsiteName,
+    WebsiteBaseUrl,
+    WebsiteDescription,
+  } from "./../../config"
   import { onMount } from 'svelte';
   import { fly, fade } from 'svelte/transition';
   
+  const ldJson = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: WebsiteName,
+    url: WebsiteBaseUrl,
+  }
+  const jsonldScript = `<script type="application/ld+json">${
+    JSON.stringify(ldJson) + "<"
+  }/script>`
+
   let showMobileMenu = false;
   let currentPricingPlan = 'monthly';
   let cryptoStats = [
-    { name: 'Bitcoin', change: '+2.4%', price: '$36,789' },
-    { name: 'Ethereum', change: '+3.1%', price: '$2,456' },
-    { name: 'Solana', change: '+5.7%', price: '$98.45' },
-    { name: 'Cardano', change: '+1.2%', price: '$0.52' }
+    { name: "比特币", change: "+2.4%", price: "¥256,789" },
+    { name: "以太坊", change: "+3.1%", price: "¥17,456" },
+    { name: "索拉纳", change: "+5.7%", price: "¥698.45" },
+    { name: "卡尔达诺", change: "+1.2%", price: "¥3.52" }
   ];
   
   let testimonials = [
@@ -66,7 +81,47 @@
   onMount(() => {
     isVisible = true;
   });
+  
+  const features = [
+    {
+      name: "专业投资策略",
+      description: "基于市场数据和专业分析，为您制定个性化的定投计划，降低投资风险。",
+      svgContent: `<path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    },
+    {
+      name: "资金安全保障",
+      description: "采用多重签名钱包和冷存储技术，确保您的数字资产安全可靠。",
+      svgContent: `<path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    },
+    {
+      name: "透明报告系统",
+      description: "定期提供详细的投资报告和分析，让您清楚了解投资状况和收益情况。",
+      svgContent: `<path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    },
+    {
+      name: "专业客户支持",
+      description: "专业团队提供一对一咨询服务，解答您的疑问，指导您的投资决策。",
+      svgContent: `<path d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    },
+    {
+      name: "市场分析洞察",
+      description: "提供最新的市场趋势分析和投资机会，帮助您把握市场动态。",
+      svgContent: `<path d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    },
+    {
+      name: "自动化执行",
+      description: "系统自动执行您的定投计划，无需手动操作，节省您的时间和精力。",
+      svgContent: `<path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+    },
+  ];
 </script>
+
+<svelte:head>
+  <title>{WebsiteName} - 数字货币定投专家</title>
+  <meta name="description" content="通过智能定投策略，稳健积累数字资产。我们帮助您在波动的加密货币市场中获得长期稳定的收益。" />
+  <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+  {@html jsonldScript}
+</svelte:head>
 
 <div class="bg-base-100 min-h-screen">
   <!-- Header/Navigation -->
@@ -153,90 +208,22 @@
       <h2 class="text-4xl font-bold text-center mb-12">为什么选择我们的定投服务</h2>
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="card bg-base-200 shadow-xl">
-          <div class="card-body">
-            <div class="flex justify-center mb-4">
-              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                </svg>
+        {#each features as feature}
+          <div class="card bg-base-200 shadow-xl">
+            <div class="card-body">
+              <div class="flex justify-center mb-4">
+                <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <!-- eslint-disable-next-line svelte/no-at-html-tags -->
+                    {@html feature.svgContent}
+                  </svg>
+                </div>
               </div>
+              <h3 class="card-title justify-center">{feature.name}</h3>
+              <p class="text-center">{feature.description}</p>
             </div>
-            <h3 class="card-title justify-center">专业投资策略</h3>
-            <p class="text-center">基于市场数据和专业分析，为您制定个性化的定投计划，降低投资风险。</p>
           </div>
-        </div>
-        
-        <div class="card bg-base-200 shadow-xl">
-          <div class="card-body">
-            <div class="flex justify-center mb-4">
-              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-            </div>
-            <h3 class="card-title justify-center">资金安全保障</h3>
-            <p class="text-center">采用多重签名钱包和冷存储技术，确保您的数字资产安全可靠。</p>
-          </div>
-        </div>
-        
-        <div class="card bg-base-200 shadow-xl">
-          <div class="card-body">
-            <div class="flex justify-center mb-4">
-              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
-                </svg>
-              </div>
-            </div>
-            <h3 class="card-title justify-center">透明报告系统</h3>
-            <p class="text-center">定期提供详细的投资报告和分析，让您清楚了解投资状况和收益情况。</p>
-          </div>
-        </div>
-        
-        <div class="card bg-base-200 shadow-xl">
-          <div class="card-body">
-            <div class="flex justify-center mb-4">
-              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z" />
-                </svg>
-              </div>
-            </div>
-            <h3 class="card-title justify-center">专业客户支持</h3>
-            <p class="text-center">专业团队提供一对一咨询服务，解答您的疑问，指导您的投资决策。</p>
-          </div>
-        </div>
-        
-        <div class="card bg-base-200 shadow-xl">
-          <div class="card-body">
-            <div class="flex justify-center mb-4">
-              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-                </svg>
-              </div>
-            </div>
-            <h3 class="card-title justify-center">市场分析洞察</h3>
-            <p class="text-center">提供最新的市场趋势分析和投资机会，帮助您把握市场动态。</p>
-          </div>
-        </div>
-        
-        <div class="card bg-base-200 shadow-xl">
-          <div class="card-body">
-            <div class="flex justify-center mb-4">
-              <div class="w-16 h-16 rounded-full bg-primary flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-primary-content" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
-            </div>
-            <h3 class="card-title justify-center">自动化执行</h3>
-            <p class="text-center">系统自动执行您的定投计划，无需手动操作，节省您的时间和精力。</p>
-          </div>
-        </div>
+        {/each}
       </div>
     </div>
   </section>
