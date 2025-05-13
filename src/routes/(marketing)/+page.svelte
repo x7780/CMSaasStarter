@@ -20,7 +20,7 @@
       name: "Automated Investing",
       description:
         "Set it and forget it. Our automated system handles regular investments based on your schedule and preferences.",
-      link: "/how-it-works",
+      link: "/pricing",
       linkText: "Learn More",
       svgContent: `<path d="M12 6V18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M15 9.5C15 8.11929 13.6569 7 12 7C10.3431 7 9 8.11929 9 9.5C9 10.8807 10.3431 12 12 12C13.6569 12 15 13.1193 15 14.5C15 15.8807 13.6569 17 12 17C10.3431 17 9 15.8807 9 14.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
@@ -30,7 +30,7 @@
       name: "Market Analysis",
       description:
         "Access professional-grade market analysis and insights to make informed investment decisions.",
-      link: "/analysis",
+      link: "/blog",
       linkText: "View Analysis",
       svgContent: `<path d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z" stroke="#1C274C" stroke-width="1.5"/>
 <path d="M6 12C6 10.5858 6 9.87868 6.43934 9.43934C6.87868 9 7.58579 9 9 9H15C16.4142 9 17.1213 9 17.5607 9.43934C18 9.87868 18 10.5858 18 12V16C18 17.4142 18 18.1213 17.5607 18.5607C17.1213 19 16.4142 19 15 19H9C7.58579 19 6.87868 19 6.43934 18.5607C6 18.1213 6 17.4142 6 16V12Z" stroke="#1C274C" stroke-width="1.5"/>
@@ -39,7 +39,7 @@
     {
       name: "Diversified Portfolios",
       description: "Spread your risk with expertly crafted diversified investment portfolios tailored to your goals.",
-      link: "/portfolios",
+      link: "/pricing",
       linkText: "Explore Portfolios",
       svgContent: `<path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z" stroke="#1C274C" stroke-width="1.5"/>
 <path d="M10 16.5H6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
@@ -61,7 +61,7 @@
       name: "Expert Guidance",
       description:
         "Get personalized investment advice from our team of financial experts.",
-      link: "/advisors",
+      link: "/contact_us",
       linkText: "Meet Our Experts",
       svgContent: `<path
                   d="M14.2084 13.5521C16.3025 13.5521 18 11.8615 18 9.77606C18 7.6906 16.3025 6 14.2084 6C12.1144 6 10.4169 7.6906 10.4169 9.77606C10.4169 10.742 10.8578 11.4446 10.8578 11.4446L6.27264 16.011C6.0669 16.2159 5.77886 16.7486 6.27264 17.2404L6.8017 17.7673C7.00743 17.9429 7.52471 18.1888 7.94796 17.7673L8.56519 17.1526C9.18242 17.7673 9.88782 17.416 10.1523 17.0647C10.5932 16.45 10.0642 15.8353 10.0642 15.8353L10.2405 15.6597C11.087 16.5027 11.8277 16.011 12.0922 15.6597C12.5331 15.045 12.0922 14.4303 12.0922 14.4303C11.9159 14.079 11.5632 14.079 12.004 13.64L12.5331 13.113C12.9564 13.4643 13.8264 13.5521 14.2084 13.5521Z"
@@ -80,7 +80,7 @@
       name: "Tax Efficiency",
       description:
         "Optimize your investments for tax efficiency with our strategic approach to portfolio management.",
-      link: "/tax-benefits",
+      link: "/blog",
       linkText: "Tax Benefits",
       svgContent: `<path d="M4.01207 15.7618L5.70156 10.6933C6.46758 8.39525 6.85059 7.24623 7.75684 7.03229C8.6631 6.81835 9.51953 7.67478 11.2324 9.38764L14.6114 12.7666C16.3242 14.4795 17.1807 15.3359 16.9667 16.2422C16.7528 17.1484 15.6038 17.5314 13.3057 18.2975L8.23724 19.987C5.47183 20.9088 4.08912 21.3697 3.35924 20.6398C2.62936 19.9099 3.09026 18.5272 4.01207 15.7618Z" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
 <path d="M12.2351 18.3461C12.2351 18.3461 11.477 16.0649 11.477 14.5552C11.477 13.0454 12.2351 10.7643 12.2351 10.7643M8.06517 19.4833C8.06517 19.4833 7.42484 16.7314 7.307 14.9343C7.11229 11.965 8.06517 7.35254 8.06517 7.35254" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
@@ -128,7 +128,7 @@
         "Email support"
       ],
       cta: "Start Investing",
-      link: "/pricing?plan=starter"
+      link: "/pricing"
     },
     {
       name: "Growth",
@@ -142,7 +142,7 @@
         "Tax-loss harvesting"
       ],
       cta: "Choose Growth",
-      link: "/pricing?plan=growth",
+      link: "/pricing",
       highlighted: true
     },
     {
@@ -158,7 +158,7 @@
         "Exclusive investment opportunities"
       ],
       cta: "Go Premium",
-      link: "/pricing?plan=premium"
+      link: "/pricing"
     }
   ]
 </script>
@@ -199,11 +199,11 @@
         </div>
       </div>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/signup">
+        <a href="/login">
           <button class="btn btn-primary btn-lg px-8">Start Investing Now</button>
         </a>
-        <a href="/how-it-works">
-          <button class="btn btn-outline btn-lg px-8">How It Works</button>
+        <a href="/pricing">
+          <button class="btn btn-outline btn-lg px-8">View Plans</button>
         </a>
       </div>
     </div>
@@ -386,10 +386,10 @@
     <h2 class="text-3xl md:text-5xl font-bold mb-6">Ready to Start Building Wealth?</h2>
     <p class="text-xl max-w-2xl mx-auto mb-8">Join thousands of investors who are growing their wealth with our automated digital market investment platform.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="/signup">
+      <a href="/login">
         <button class="btn btn-lg bg-white text-primary hover:bg-white/90 border-none px-8">Start Investing Now</button>
       </a>
-      <a href="/contact">
+      <a href="/contact_us">
         <button class="btn btn-lg btn-outline border-white text-white hover:bg-white hover:text-primary px-8">Talk to an Advisor</button>
       </a>
     </div>
